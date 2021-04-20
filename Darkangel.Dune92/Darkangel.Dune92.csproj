@@ -9,4 +9,13 @@
     <DocumentationFile>C:\Users\Александр\OneDrive\Development\Games\Darkangel.Games\Darkangel.Dune92\Darkangel.Dune92.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="Darkangel.IntegerX">
+      <HintPath>..\..\..\Hobby\Darkangel.Libs\Darkangel.IntegerX\bin\Release\net5.0\Darkangel.IntegerX.dll</HintPath>
+    </Reference>
+    <Reference Include="Darkangel.IO">
+      <HintPath>..\..\..\Hobby\Darkangel.Libs\Darkangel.IO\bin\Release\net5.0\Darkangel.IO.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

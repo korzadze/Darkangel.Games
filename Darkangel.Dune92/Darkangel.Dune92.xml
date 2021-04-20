@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Darkangel.Dune92</name>
+    </assembly>
+    <members>
+        <member name="T:Darkangel.Dune92.ByteCoordinates2D">
+            <summary>
+            <para>Координаты</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.ByteCoordinates2D.X">
+            <summary>
+            <para>Координата X</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.ByteCoordinates2D.Y">
+            <summary>
+            <para>Координата Y</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.ByteCoordinates2D.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.ByteCoordinates2D.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.DuneRegions">
+            <summary>
+            <para>Регионы (первая часть названия поселения)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.None">
+            <summary>
+            <para>Не определен.</para>
+            </summary>
+            <remarks>
+            <para>Нельзя использовать в сохраненном файле</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Arrakeen">
+            <summary>
+            <para>Арракин (база Харконненов)</para>
+            </summary>
+            <remarks>
+            <para>По книге, Атридесы, прибыв на Дюну, поселились именно в Арракине.</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Carthag">
+            <summary>
+            <para>Картаг (база Атридесов)</para>
+            </summary>
+            <remarks>
+            <para>По книге, основная база Харконненов на Дюне.</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Tuono">
+            <summary>
+            <para>Туоно</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Habbanya">
+            <summary>
+            <para>Хабанья</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Oxtyn">
+            <summary>
+            <para>Окстин</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Tsympo">
+            <summary>
+            <para>Тсимпо</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Bledan">
+            <summary>
+            <para>Бледан</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Ergsun">
+            <summary>
+            <para>Эргсан</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Haga">
+            <summary>
+            <para>Хага</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Cielago">
+            <summary>
+            <para>Силаго</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Sihaya">
+            <summary>
+            <para>Сихайя</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneRegions.Celimyn">
+            <summary>
+            <para>Семлин</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.DuneSubRegions">
+            <summary>
+            <para>Субрегионы (вторая часть названия поселения)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.None">
+            <summary>
+            <para>Не определен.</para>
+            </summary>
+            <remarks>
+            <para>Нельзя использовать в сохраненном файле</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Atreides">
+            <summary>
+            <para>Атридес (используется только в названии дворца)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Harkonnen">
+            <summary>
+            <para>Харконнен (используется только в названии дворца)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Tabr">
+            <summary>
+            <para>Табр</para>
+            </summary>
+            <remarks>
+            <para>Вообще, на Дюне был всего один ситч Табр...</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Timin">
+            <summary>
+            <para>Тимин</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Tuek">
+            <summary>
+            <para>Туек</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Harg">
+            <summary>
+            <para>Харг</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Clam">
+            <summary>
+            <para>Клам</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Tsymyn">
+            <summary>
+            <para>Цимин</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Siet">
+            <summary>
+            <para>Сьет</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Pyons">
+            <summary>
+            <para>Пейонс (используется в названиях баз контрабандистов)</para>
+            </summary>
+            <remarks>
+            <para>Хотя, в книге, пеоны - оседлые жители Дюны, по сути, поселения рабов.</para>
+            </remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.DuneSubRegions.Pyort">
+            <summary>
+            <para>Пиорт</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.IBinaryData">
+            <summary>
+            <para>Интерфейс объекта, допускающего сохранение и загрузку данныих в двоичных потоках</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.IBinaryLoadable">
+            <summary>
+            <para>Интерфейс объекта, допускающего загрузку из двоичного потока</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.IBinaryLoadable.Load(System.IO.Stream)">
+            <summary>
+            <para>Загрузить данные объекта из двоичного потока</para>
+            </summary>
+            <param name="stream">Исходный поток</param>
+        </member>
+        <member name="T:Darkangel.Dune92.IBinaryStorable">
+            <summary>
+            <para>Интерфейс объекта, допускающего сохранение данных в двоичном потоке</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.IBinaryStorable.Store(System.IO.Stream)">
+            <summary>
+            <para>Сохранить данные объекта в двоичный поток</para>
+            </summary>
+            <param name="stream">Целевой поток</param>
+        </member>
+        <member name="T:Darkangel.Dune92.Savegame">
+            <summary>
+            <para>Файл сохраненной игры Dune (1992)</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.Savegame.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.Savegame.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.TownFlags">
+            <summary>
+            <para>Флаги поселения</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.HasVegetationBegun">
+            <summary>
+            <para>В поселении начаты посадки</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.UnderAttack">
+            <summary>
+            <para>Поселение атаковано</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.SietchInfiltrated">
+            <summary>
+            <para>В поселение проникли агенты Харконненов</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.BattleWon">
+            <summary>
+            <para>Битва за поселение выиграна</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.FremenPresent">
+            <summary>
+            <para>В поселении есть Свободные</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.HasWindtrap">
+            <summary>
+            <para>В поселении установлены водяные ловушки</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.Prospected">
+            <summary>
+            <para>Район вокруг поселения исследован на залежи спайса</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownFlags.Hidden">
+            <summary>
+            <para>Поселение еще не открыто</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.TownInfo">
+            <summary>
+            <para>Информация о поселении</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Region">
+            <summary>
+            <para>Регион, которому принадлежит поселение</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.SubRegion">
+            <summary>
+            <para>Субрегион, которому принадлежит поселение</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.DesertAroundSietch">
+            <summary>
+            Пустыня вокруг поселения
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.MapLocation">
+            <summary>
+            Расположение поселения на карте
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Unknown01">
+            <summary>
+            Неизвестные данные
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Position">
+            <summary>
+            ??? Позиция
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Apearance">
+            <summary>
+            Как выглядит поселение
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.HousedTroopID">
+            <summary>
+            Какая группа создала это поселение
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Flags">
+            <summary>
+            Флаги поселения
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Unknown02">
+            <summary>
+            Неизвестные данные
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.SpiceFieldID">
+            <summary>
+            ??? Идентификатор спайсового поля
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Unknown03">
+            <summary>
+            Неизвестные данные
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.SpiceDensity">
+            <summary>
+            Плотность залегания спайса
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.Unknown04">
+            <summary>
+            Неизвестные данные
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.HarvestersAmount">
+            <summary>
+            Количество харвестеров в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.OrnithoptersAmount">
+            <summary>
+            Количество орнитоптеров в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.KnivesAmount">
+            <summary>
+            Количество крис-ножей в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.LaserGunsAmount">
+            <summary>
+            Количество лазерных пистолетов в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.WeirdModulesAmount">
+            <summary>
+            Количество модулей в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.AtomicsAmount">
+            <summary>
+            Количество атомных бомб в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.BulbsAmount">
+            <summary>
+            Количество саженцев в поселении (включая и те, что выделены группам, находящимся в поселении)
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TownInfo.WaterAmount">
+            <summary>
+            Количество воды в поселении
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.TownInfo.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.TownInfo.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.UnknownFieldData">
+            <summary>
+            <para>Поле неопределенных данных</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.UnknownFieldData.Data">
+            <summary>
+            <para>Данные поля</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.UnknownFieldData.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.UnknownFieldData.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

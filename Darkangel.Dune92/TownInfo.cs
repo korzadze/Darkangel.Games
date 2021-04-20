@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace Darkangel.Dune92
 {
-    public class TownInfo
+    /// <summary>
+    /// <para>Информация о поселении</para>
+    /// </summary>
+    public class TownInfo : IBinaryData
     {
         /// <summary>
         /// <para>Регион, которому принадлежит поселение</para>
@@ -96,5 +95,58 @@ namespace Darkangel.Dune92
         /// Количество воды в поселении
         /// </summary>
         public byte WaterAmount;
+
+        /// <inheritdoc/>
+        public void Load(Stream stream)
+        {
+            Region = (DuneRegions)stream.ReadByte();
+            SubRegion = (DuneSubRegions)stream.ReadByte();
+            DesertAroundSietch = (byte)stream.ReadByte();
+            MapLocation.Load(stream);
+            Unknown01.Load(stream);
+            Position.Load(stream);
+            Apearance = (byte)stream.ReadByte();
+            HousedTroopID = (byte)stream.ReadByte();
+            Flags = (TownFlags)stream.ReadByte();
+            Unknown02.Load(stream);
+            SpiceFieldID = (byte)stream.ReadByte();
+            Unknown03.Load(stream);
+            SpiceDensity = (byte)stream.ReadByte();
+            Unknown04.Load(stream);
+            HarvestersAmount = (byte)stream.ReadByte();
+            OrnithoptersAmount = (byte)stream.ReadByte();
+            KnivesAmount = (byte)stream.ReadByte();
+            LaserGunsAmount = (byte)stream.ReadByte();
+            WeirdModulesAmount = (byte)stream.ReadByte();
+            AtomicsAmount = (byte)stream.ReadByte();
+            BulbsAmount = (byte)stream.ReadByte();
+            WaterAmount = (byte)stream.ReadByte(); ;
+        }
+        /// <inheritdoc/>
+        public void Store(Stream stream)
+        {
+            stream.WriteByte((byte)Region);
+            stream.WriteByte((byte)SubRegion);
+            stream.WriteByte(DesertAroundSietch);
+            MapLocation.Store(stream);
+            Unknown01.Store(stream);
+            Position.Store(stream);
+            stream.WriteByte(Apearance);
+            stream.WriteByte(HousedTroopID);
+            stream.WriteByte((byte)Flags);
+            Unknown02.Store(stream);
+            stream.WriteByte(SpiceFieldID);
+            Unknown03.Store(stream);
+            stream.WriteByte(SpiceDensity);
+            Unknown04.Store(stream);
+            stream.WriteByte(HarvestersAmount);
+            stream.WriteByte(OrnithoptersAmount);
+            stream.WriteByte(KnivesAmount);
+            stream.WriteByte(LaserGunsAmount);
+            stream.WriteByte(WeirdModulesAmount);
+            stream.WriteByte(AtomicsAmount);
+            stream.WriteByte(BulbsAmount);
+            stream.WriteByte(WaterAmount);
+        }
     }
 }
