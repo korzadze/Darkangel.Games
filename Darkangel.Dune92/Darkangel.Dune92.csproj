@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>darkangel2021.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,6 +18,27 @@
     <Reference Include="Darkangel.IO">
       <HintPath>..\..\..\Hobby\Darkangel.Libs\Darkangel.IO\bin\Release\net5.0\Darkangel.IO.dll</HintPath>
     </Reference>
+    <Reference Include="Darkangel.Strings">
+      <HintPath>..\..\..\Hobby\Darkangel.Libs\Darkangel.Strings\bin\Release\net5.0\Darkangel.Strings.dll</HintPath>
+    </Reference>
+    <Reference Include="Darkangel.Xml">
+      <HintPath>..\..\..\Hobby\Darkangel.Libs\Darkangel.Xml\bin\Release\net5.0\Darkangel.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="StringResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="StringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

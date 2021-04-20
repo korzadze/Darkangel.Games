@@ -1,11 +1,14 @@
 ﻿using System.IO;
+using System.Xml;
+using Darkangel.Strings;
+using Darkangel.Xml;
 
 namespace Darkangel.Dune92
 {
     /// <summary>
     /// <para>Поле неопределенных данных</para>
     /// </summary>
-    public class UnknownFieldData : IBinaryData
+    public class UnknownFieldData : IBinaryData, IXmlWritable
     {
         /// <summary>
         /// <para>Данные поля</para>
@@ -28,5 +31,8 @@ namespace Darkangel.Dune92
         {
             stream.Write(Data, 0, Data.Length);
         }
+        /// <inheritdoc/>
+        public void AppendTo(XmlElement owner) =>
+            owner.AddChild("Data").AddText(Data.AsHexString(" "));
     }
 }

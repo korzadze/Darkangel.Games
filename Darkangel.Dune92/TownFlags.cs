@@ -25,9 +25,9 @@ namespace Darkangel.Dune92
         /// </summary>
         BattleWon = 1 << 3,
         /// <summary>
-        /// <para>В поселении есть Свободные</para>
+        /// <para>Поселение обследовано</para>
         /// </summary>
-        FremenPresent = 1 << 4,
+        Visited = 1 << 4,
         /// <summary>
         /// <para>В поселении установлены водяные ловушки</para>
         /// </summary>

@@ -1,12 +1,28 @@
-﻿using System.IO;
+﻿using Darkangel.Strings;
+using Darkangel.Xml;
+using System.IO;
+using System.Xml;
 
 namespace Darkangel.Dune92
 {
     /// <summary>
     /// <para>Информация о поселении</para>
     /// </summary>
-    public class TownInfo : IBinaryData
+    public class TownInfo : IBinaryData, IXmlWritable
     {
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            var flag = Flags.HasFlag(TownFlags.Hidden) ? ('-') : ('+');
+            if ((SubRegion == DuneSubRegions.Atreides) || (SubRegion == DuneSubRegions.Harkonnen))
+            {
+                return string.Format("{0}{1}({2})", flag, Region, SubRegion);
+            }
+            else
+            {
+                return string.Format("{0}{1}-{2}", flag, Region, SubRegion);
+            }
+        }
         /// <summary>
         /// <para>Регион, которому принадлежит поселение</para>
         /// </summary>
@@ -22,15 +38,15 @@ namespace Darkangel.Dune92
         /// <summary>
         /// Расположение поселения на карте
         /// </summary>
-        public ByteCoordinates2D MapLocation;
+        public readonly MapCoord MapLocation = new();
         /// <summary>
         /// Неизвестные данные
         /// </summary>
-        public UnknownFieldData Unknown01 = new(1);
+        public readonly UnknownFieldData Unknown01 = new(1);
         /// <summary>
         /// ??? Позиция
         /// </summary>
-        public ByteCoordinates2D Position;
+        public readonly MapCoord Position = new();
         /// <summary>
         /// Как выглядит поселение
         /// </summary>
@@ -46,7 +62,7 @@ namespace Darkangel.Dune92
         /// <summary>
         /// Неизвестные данные
         /// </summary>
-        public UnknownFieldData Unknown02 = new(5);
+        public readonly UnknownFieldData Unknown02 = new(5);
         /// <summary>
         /// ??? Идентификатор спайсового поля
         /// </summary>
@@ -54,7 +70,7 @@ namespace Darkangel.Dune92
         /// <summary>
         /// Неизвестные данные
         /// </summary>
-        public UnknownFieldData Unknown03 = new(1);
+        public readonly UnknownFieldData Unknown03 = new(1);
         /// <summary>
         /// Плотность залегания спайса
         /// </summary>
@@ -62,7 +78,7 @@ namespace Darkangel.Dune92
         /// <summary>
         /// Неизвестные данные
         /// </summary>
-        public UnknownFieldData Unknown04 = new(1);
+        public readonly UnknownFieldData Unknown04 = new(1);
         /// <summary>
         /// Количество харвестеров в поселении (включая и те, что выделены группам, находящимся в поселении)
         /// </summary>
@@ -95,7 +111,6 @@ namespace Darkangel.Dune92
         /// Количество воды в поселении
         /// </summary>
         public byte WaterAmount;
-
         /// <inheritdoc/>
         public void Load(Stream stream)
         {
@@ -120,7 +135,7 @@ namespace Darkangel.Dune92
             WeirdModulesAmount = (byte)stream.ReadByte();
             AtomicsAmount = (byte)stream.ReadByte();
             BulbsAmount = (byte)stream.ReadByte();
-            WaterAmount = (byte)stream.ReadByte(); ;
+            WaterAmount = (byte)stream.ReadByte();
         }
         /// <inheritdoc/>
         public void Store(Stream stream)
@@ -147,6 +162,35 @@ namespace Darkangel.Dune92
             stream.WriteByte(AtomicsAmount);
             stream.WriteByte(BulbsAmount);
             stream.WriteByte(WaterAmount);
+        }
+        /// <inheritdoc/>
+        public void AppendTo(XmlElement owner)
+        {
+            var root = owner.AddChild(nameof(TownInfo));
+            root.AddAttribute(nameof(Region), Region);
+            root.AddAttribute(nameof(SubRegion), SubRegion);
+            root.AddAttribute(nameof(DesertAroundSietch),DesertAroundSietch);
+            MapLocation.AppendTo(root.AddChild(nameof(MapLocation)));
+            Unknown01.AppendTo(root.AddChild(nameof(Unknown01)));
+            Position.AppendTo(root.AddChild(nameof(Position)));
+            root.AddAttribute(nameof(Apearance), Apearance);
+            root.AddAttribute("Bin", string.Format("{0}b", Apearance.IntToStr(2).PadLeft(8, '0')));
+            root.AddAttribute("Hex", string.Format("0x{0}", Apearance.IntToStr(16).PadLeft(4, '0')));
+            root.AddAttribute(nameof(HousedTroopID), HousedTroopID);
+            root.AddAttribute(nameof(Flags), Flags);
+            Unknown02.AppendTo(root.AddChild(nameof(Unknown02)));
+            root.AddAttribute(nameof(SpiceFieldID), SpiceFieldID);
+            Unknown03.AppendTo(root.AddChild(nameof(Unknown03)));
+            root.AddAttribute(nameof(SpiceDensity), SpiceDensity);
+            Unknown04.AppendTo(root.AddChild(nameof(Unknown04)));
+            root.AddAttribute(nameof(HarvestersAmount), HarvestersAmount);
+            root.AddAttribute(nameof(OrnithoptersAmount), OrnithoptersAmount);
+            root.AddAttribute(nameof(KnivesAmount), KnivesAmount);
+            root.AddAttribute(nameof(LaserGunsAmount), LaserGunsAmount);
+            root.AddAttribute(nameof(WeirdModulesAmount), WeirdModulesAmount);
+            root.AddAttribute(nameof(AtomicsAmount), AtomicsAmount);
+            root.AddAttribute(nameof(BulbsAmount), BulbsAmount);
+            root.AddAttribute(nameof(WaterAmount), WaterAmount);
         }
     }
 }

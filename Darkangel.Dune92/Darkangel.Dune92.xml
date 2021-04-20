@@ -4,26 +4,20 @@
         <name>Darkangel.Dune92</name>
     </assembly>
     <members>
-        <member name="T:Darkangel.Dune92.ByteCoordinates2D">
+        <member name="T:Darkangel.Dune92.Defines">
             <summary>
-            <para>Координаты</para>
+            <para>Глобальные константы и статика</para>
             </summary>
         </member>
-        <member name="F:Darkangel.Dune92.ByteCoordinates2D.X">
+        <member name="F:Darkangel.Dune92.Defines.TroopsMaxCount">
             <summary>
-            <para>Координата X</para>
+            <para>Максимальное количество групп в игре</para>
             </summary>
         </member>
-        <member name="F:Darkangel.Dune92.ByteCoordinates2D.Y">
+        <member name="F:Darkangel.Dune92.Defines.TownsMaxCount">
             <summary>
-            <para>Координата Y</para>
+            <para>Максимальное количество поселений в игре</para>
             </summary>
-        </member>
-        <member name="M:Darkangel.Dune92.ByteCoordinates2D.Load(System.IO.Stream)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Darkangel.Dune92.ByteCoordinates2D.Store(System.IO.Stream)">
-            <inheritdoc/>
         </member>
         <member name="T:Darkangel.Dune92.DuneRegions">
             <summary>
@@ -178,6 +172,75 @@
             <para>Пиорт</para>
             </summary>
         </member>
+        <member name="T:Darkangel.Dune92.GameData">
+            <summary>
+            <para>Распакованные данные сохраненной игры</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Unknown01">
+            <summary>
+            <para>Неизвестные данные</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.GameData.AtriedesSpiceStock">
+            <summary>
+            <para>Количество спайса в хранилище Атридесов</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Unknown02">
+            <summary>
+            <para>Неизвестные данные</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.GameData.HarkonnenSpiceStock">
+            <summary>
+            <para>Количество спайса в хранилище Харконненов</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Unknown03">
+            <summary>
+            <para>Неизвестные данные</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Towns">
+            <summary>
+            <para>Информация о поселениях</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Unknown04">
+            <summary>
+            <para>Неизвестные данные</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Troops">
+            <summary>
+            <para>Информация о группах</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Unknown05">
+            <summary>
+            <para>Неизвестные данные</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.TelepathicStrength">
+            <summary>
+            <para>Телепатическая сила Пола (расстояние, на котором он может связываться с группами)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.GameData.Unknown06">
+            <summary>
+            <para>Неизвестные данные</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.GameData.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.GameData.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.GameData.AppendTo(System.Xml.XmlElement)">
+            <inheritdoc/>
+        </member>
         <member name="T:Darkangel.Dune92.IBinaryData">
             <summary>
             <para>Интерфейс объекта, допускающего сохранение и загрузку данныих в двоичных потоках</para>
@@ -205,16 +268,242 @@
             </summary>
             <param name="stream">Целевой поток</param>
         </member>
-        <member name="T:Darkangel.Dune92.Savegame">
+        <member name="T:Darkangel.Dune92.IXmlWritable">
+            <summary>
+            <para>Интерфейс объектов, поддерживающих запись данных в XML</para>
+            </summary>
+            <remarks>Лень возится с сериализацией</remarks>
+        </member>
+        <member name="M:Darkangel.Dune92.IXmlWritable.AppendTo(System.Xml.XmlElement)">
+            <summary>
+            <para>Добавить информацию объекта к </para>
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="T:Darkangel.Dune92.MapCoord">
+            <summary>
+            <para>Координаты</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.MapCoord.X">
+            <summary>
+            <para>Координата X</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.MapCoord.Y">
+            <summary>
+            <para>Координата Y</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.MapCoord.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.MapCoord.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.MapCoord.AppendTo(System.Xml.XmlElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.SaveGame">
             <summary>
             <para>Файл сохраненной игры Dune (1992)</para>
             </summary>
         </member>
-        <member name="M:Darkangel.Dune92.Savegame.Load(System.IO.Stream)">
+        <member name="F:Darkangel.Dune92.SaveGame.Header">
+            <summary>
+            <para>Заголовок файла</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveGame.DefaultMaxUnrepeatedValueCount">
+            <summary>
+            <para>Максимальное количество последовательно-одинаковых значений, записываемых в поток без счетчика повторов</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveGame.DefaultControlCode">
+            <summary>
+            <para>Контрольный код</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveGame.PackingInfoSize">
+            <summary>
+            <para>Размер заголовка</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveGame.ControlCode">
+            <summary>
+            <para>Код блока сжатия?</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveGame.MaxUnrepeatedValueCount">
+            <summary>
+            <para>Максимальное количество последовательно-одинаковых значений, записываемых в поток без счетчика повторов</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveGame.GameData">
+            <summary>
+            <para>Данные</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGame.#ctor(System.String)">
+            <summary>
+            <para>Загрузить сохраненную игру из файла</para>
+            </summary>
+            <param name="fileName">Исходный файл</param>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGame.Store(System.String)">
+            <summary>
+            <para>Сохранить данные в файл</para>
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGame.CountValue(System.IO.Stream)">
+            <summary>
+            <para>Подсчитать повторяющиеся последовательные значения в потоке</para>
+            </summary>
+            <param name="inStream">Входные данные</param>
+            <returns>Значение и количество повторов</returns>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGame.WriteBytes(System.IO.Stream,System.Byte,System.Int32)">
+            <summary>
+            <para>Записать упаковочную последовательность байт в поток</para>
+            </summary>
+            <param name="outStream">Целевой поток</param>
+            <param name="val">Значение</param>
+            <param name="count">Количество повторов</param>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGame.WritePackSequence(System.IO.Stream,System.Byte,System.Int32)">
+            <summary>
+            <para>Записать кодовую последовательность в поток</para>
+            </summary>
+            <param name="outStream">Целевой поток</param>
+            <param name="val">Значение</param>
+            <param name="count">Количество повторов</param>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGame.AppendTo(System.Xml.XmlElement)">
             <inheritdoc/>
         </member>
-        <member name="M:Darkangel.Dune92.Savegame.Store(System.IO.Stream)">
+        <member name="M:Darkangel.Dune92.SaveGame.ToXml">
+            <summary>
+            <para>Предоставить информацию о сохраненной игре в виде XML документа</para>
+            </summary>
+            <returns>XML документ с данными об игре</returns>
+        </member>
+        <member name="T:Darkangel.Dune92.SaveGameFactory">
+            <summary>
+            <para>Утилиты для получения списка файлов сохраненной игры</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveGameFactory.GetFiles(System.String)">
+            <summary>
+            <para>Получить список файлов сохраненной игры</para>
+            </summary>
+            <param name="path">Путь к корню игры</param>
+            <returns>Список файлов</returns>
+        </member>
+        <member name="T:Darkangel.Dune92.SaveHeader">
+            <summary>
+            <para>Заголовок файла сохраненной игры</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.SaveHeader.GameTime">
+            <summary>
+            <para>Игровое время</para>
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.SaveHeader.Periods">
+            <summary>
+            <para>Количество периодов, прошедших с начала игры</para>
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveHeader.Load(System.IO.Stream)">
             <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveHeader.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.SaveHeader.AppendTo(System.Xml.XmlElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.SaveInfo">
+            <summary>
+            <para>Информация о сохраненной игре</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveInfo.FileName">
+            <summary>
+            <para>Имя файла сохраненной игры</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveInfo.Header">
+            <summary>
+            <para>Заголовок сохраненной игры</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveInfo.Slot">
+            <summary>
+            <para>Слот сохранения</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveInfo.SaveName">
+            <summary>
+            <para>Название слота сохранения</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.SaveInfo.Version">
+            <summary>
+            <para></para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.StringResources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.SaveGameTimeFormat">
+            <summary>
+              Ищет локализованную строку, похожую на Day {0} / {1}:{2}.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.Slot0Name">
+            <summary>
+              Ищет локализованную строку, похожую на Restart game.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.Slot1Name">
+            <summary>
+              Ищет локализованную строку, похожую на Slot 1.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.Slot2Name">
+            <summary>
+              Ищет локализованную строку, похожую на Slot 2.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.Slot3Name">
+            <summary>
+              Ищет локализованную строку, похожую на Last entering into a place.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.Slot4Name">
+            <summary>
+              Ищет локализованную строку, похожую на Last entering new sietch.
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.StringResources.UnknownSlotName">
+            <summary>
+              Ищет локализованную строку, похожую на Unknown slot.
+            </summary>
         </member>
         <member name="T:Darkangel.Dune92.TownFlags">
             <summary>
@@ -241,9 +530,9 @@
             <para>Битва за поселение выиграна</para>
             </summary>
         </member>
-        <member name="F:Darkangel.Dune92.TownFlags.FremenPresent">
+        <member name="F:Darkangel.Dune92.TownFlags.Visited">
             <summary>
-            <para>В поселении есть Свободные</para>
+            <para>Поселение обследовано</para>
             </summary>
         </member>
         <member name="F:Darkangel.Dune92.TownFlags.HasWindtrap">
@@ -265,6 +554,9 @@
             <summary>
             <para>Информация о поселении</para>
             </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.TownInfo.ToString">
+            <inheritdoc/>
         </member>
         <member name="F:Darkangel.Dune92.TownInfo.Region">
             <summary>
@@ -382,6 +674,407 @@
         <member name="M:Darkangel.Dune92.TownInfo.Store(System.IO.Stream)">
             <inheritdoc/>
         </member>
+        <member name="M:Darkangel.Dune92.TownInfo.AppendTo(System.Xml.XmlElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.TroopEquipmentFlags">
+            <summary>
+            <para>Оборудование группы</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.NotAssigned">
+            <summary>
+            <para>Не назначено</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.Bulb">
+            <summary>
+            <para>Саженцы</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.AtomicWeapon">
+            <summary>
+            <para>Атомное оружие</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.WeirdingModule">
+            <summary>
+            <para>Модули</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.LaserGun">
+            <summary>
+            <para>Лазерные пистолеты</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.Krys">
+            <summary>
+            <para>Ножи</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.Ornithopter">
+            <summary>
+            <para>Топтеры</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopEquipmentFlags.Harvester">
+            <summary>
+            <para>Харвестеры</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.TroopFlags">
+            <summary>
+            <para>Флаги группы</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.Unknown01">
+            <summary>
+            <para>???</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.TroopMergedWithThis">
+            <summary>
+            <para>Группа объединилась с другой</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.Unknown02">
+            <summary>
+            <para>???</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.Unknown03">
+            <summary>
+            <para>???</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.FortressRebuildIntoSietch">
+            <summary>
+            <para>Группа преобразует укрепление в съетч</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.SpiceSkilled">
+            <summary>
+            <para>Группа умеет собирать спайс</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.MilitarySkilled">
+            <summary>
+            <para>Группа умеет воевать</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopFlags.EcologySkilled">
+            <summary>
+            <para>Группа знает экологию</para>
+            </summary>
+        </member>
+        <member name="T:Darkangel.Dune92.TroopInfo">
+            <summary>
+            <para>Информация о группе</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.TroopId">
+            <summary>
+            Идентификатор группы
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.NextTroopId">
+            <summary>
+            Идентификатор следующей группы
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.TownPosition">
+            <summary>
+            Расположение групы около поселения на карте
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Occupation">
+            <summary>
+            Чем занимается группа
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Unknown01">
+            <summary>
+            Неизвестные данные
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.MapPosition">
+            <summary>
+            Расположение группы на карте
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Position">
+            <summary>
+            ??? Позиция
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Unknown02">
+            <summary>
+            Неизвестные данные
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Dissatisfaction">
+            <summary>
+            Неудовлетворенность
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Flags">
+            <summary>
+            Флаги группы
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.MissYouMessage">
+            <summary>
+            Отложенное сообщение
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Motivation">
+            <summary>
+            Мотивация группы
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.SpiceSkill">
+            <summary>
+            Уровень умения добычи спайса
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.MilitarySkill">
+            <summary>
+            Уровень боевых умений
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.EcologySkill">
+            <summary>
+            Уровень экологических умений
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopInfo.Equipment">
+            <summary>
+            Оборудование группы
+            </summary>
+        </member>
+        <member name="P:Darkangel.Dune92.TroopInfo.Population">
+            <summary>
+            Количество народа в группе, деленное на 10
+            </summary>
+        </member>
+        <member name="M:Darkangel.Dune92.TroopInfo.Load(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.TroopInfo.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.TroopInfo.AppendTo(System.Xml.XmlElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Darkangel.Dune92.TroopOccupation">
+            <summary>
+            <para>Чем занимается группа</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Mining">
+            <summary>
+            <para>Сборщики: работают</para>
+            </summary>
+            <remarks>тип + статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Prospecting">
+            <summary>
+            <para>Сборщики: разведка спайса</para>
+            </summary>
+            <remarks>тип + статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.WaitingForOrders">
+            <summary>
+            <para>Сборщики: ждут указаний</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Militaries">
+            <summary>
+            <para>Армия</para>
+            </summary>
+            <remarks>тип</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Ecologists">
+            <summary>
+            <para>Экологи</para>
+            </summary>
+            <remarks>тип</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.JobsFinished">
+            <summary>
+            <para>Сборщики: работа закончена</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Slaving">
+            <summary>
+            <para>Свободные: в рабстве</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.MovingToAnotherPlace">
+            <summary>
+            <para>Сборщики: перемещаются в другое место</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.NotYetHired">
+            <summary>
+            <para>Свободные: не наняты</para>
+            </summary>
+            <remarks>тип</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.SearchEquipment">
+            <summary>
+            <para>Сборщики: в поисках оборудования</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Espionage">
+            <summary>
+            <para>Армия: разведка (статус)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.Attacking">
+            <summary>
+            <para>Армия: атака</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.MilitariesSearchEquipment">
+            <summary>
+            <para>Армия: в поисках оборудования</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.WindtrapAssembly">
+            <summary>
+            <para>Экологи: работают (собирают ветроловушку)</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.BulbGrowing">
+            <summary>
+            <para>Экологи: выращивают саженцы</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.EcologistsSearchEquipment">
+            <summary>
+            <para>Экологи: в поисках оборудования</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenMining">
+            <summary>
+            <para>Сборщики Харконненов: работают?</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenProspecting">
+            <summary>
+            <para>Сборщики Харконненов: разведка спайса?</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenWaitingOrders">
+            <summary>
+            <para>Сборщики Харконненов: ждут указаний</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenSearchEquipment">
+            <summary>
+            <para>Сборщики Харконненов: в поисках оборудования</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenMilitaries">
+            <summary>
+            <para>Армия Харконненов</para>
+            </summary>
+            <remarks>тип</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenMilitariesSearchEquipment">
+            <summary>
+            <para>Армия Харконненов: в поисках оборудования</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.ProspectingCaptured">
+            <summary>
+            <para>Захваченные исследователи спайса</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.TroopApologizeHasBeenCaptured">
+            <summary>
+            <para>Свободные: группа была захвачена? (ожидающее сообщение)</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.MinersSearchHarvester">
+            <summary>
+            <para>Сборщики: в поисках оборудования?</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopOccupation.HarkonnenSlaves">
+            <summary>
+            <para>Свободные: в плену у Харконненов?</para>
+            </summary>
+            <remarks>статус</remarks>
+        </member>
+        <member name="T:Darkangel.Dune92.TroopPosition">
+            <summary>
+            <para>Расположение групп вокруг поселения на карте</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.Undefined">
+            <summary>
+            <para>Не определено</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.BottomCenter">
+            <summary>
+            <para>В центре снизу</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.BottomRight">
+            <summary>
+            <para>Справа снизу</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.BottomLeft">
+            <summary>
+            <para>Слева снизу</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.CenterRight">
+            <summary>
+            <para>Справа по центру</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.CenterLeft">
+            <summary>
+            <para>Слева по центру</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.TopRight">
+            <summary>
+            <para>Справа сверху</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.TopLeft">
+            <summary>
+            <para>Слева сверху</para>
+            </summary>
+        </member>
+        <member name="F:Darkangel.Dune92.TroopPosition.TopCenter">
+            <summary>
+            <para>В центре сверху</para>
+            </summary>
+        </member>
         <member name="T:Darkangel.Dune92.UnknownFieldData">
             <summary>
             <para>Поле неопределенных данных</para>
@@ -396,6 +1089,9 @@
             <inheritdoc/>
         </member>
         <member name="M:Darkangel.Dune92.UnknownFieldData.Store(System.IO.Stream)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Darkangel.Dune92.UnknownFieldData.AppendTo(System.Xml.XmlElement)">
             <inheritdoc/>
         </member>
     </members>

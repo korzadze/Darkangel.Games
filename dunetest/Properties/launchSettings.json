@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dunetest": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\DOSBox\\game\\Dune\\DUNE21S0.SAV"
+    }
+  }
+}

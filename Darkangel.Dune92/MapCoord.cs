@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Darkangel.Xml;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml;
 
 namespace Darkangel.Dune92
 {
     /// <summary>
     /// <para>Координаты</para>
     /// </summary>
-    public class ByteCoordinates2D : IBinaryData
+    public class MapCoord : IBinaryData, IXmlWritable
     {
         /// <summary>
         /// <para>Координата X</para>
@@ -32,5 +29,10 @@ namespace Darkangel.Dune92
             stream.WriteByte(X);
             stream.WriteByte(Y);
         }
+        /// <inheritdoc/>
+        public void AppendTo(XmlElement owner) =>
+            owner.AddChild(nameof(MapCoord))
+                .AddAttribute(nameof(X), X)
+                .AddAttribute(nameof(Y), Y);
     }
 }
