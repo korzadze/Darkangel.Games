@@ -1,4 +1,4 @@
-﻿namespace Darkangel.Dune92
+﻿namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Интерфейс объекта, допускающего сохранение и загрузку данныих в двоичных потоках</para>

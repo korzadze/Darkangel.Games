@@ -3,7 +3,7 @@ using Darkangel.Xml;
 using System.IO;
 using System.Xml;
 
-namespace Darkangel.Dune92
+namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Информация о поселении</para>
@@ -173,9 +173,11 @@ namespace Darkangel.Dune92
             MapLocation.AppendTo(root.AddChild(nameof(MapLocation)));
             Unknown01.AppendTo(root.AddChild(nameof(Unknown01)));
             Position.AppendTo(root.AddChild(nameof(Position)));
+
             root.AddAttribute(nameof(Apearance), Apearance);
             root.AddAttribute("Bin", string.Format("{0}b", Apearance.IntToStr(2).PadLeft(8, '0')));
             root.AddAttribute("Hex", string.Format("0x{0}", Apearance.IntToStr(16).PadLeft(4, '0')));
+
             root.AddAttribute(nameof(HousedTroopID), HousedTroopID);
             root.AddAttribute(nameof(Flags), Flags);
             Unknown02.AppendTo(root.AddChild(nameof(Unknown02)));

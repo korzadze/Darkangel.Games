@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Xml;
 
-namespace Darkangel.Dune92
+namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Заголовок файла сохраненной игры</para>

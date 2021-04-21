@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Darkangel.Dune92
+namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Утилиты для получения списка файлов сохраненной игры</para>

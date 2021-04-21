@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using Darkangel.Dune92;
+using Darkangel.Games.Dune92;
 
 namespace dunetest
 {

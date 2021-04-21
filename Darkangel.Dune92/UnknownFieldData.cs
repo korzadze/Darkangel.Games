@@ -3,7 +3,7 @@ using System.Xml;
 using Darkangel.Strings;
 using Darkangel.Xml;
 
-namespace Darkangel.Dune92
+namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Поле неопределенных данных</para>

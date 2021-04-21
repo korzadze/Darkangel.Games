@@ -6,7 +6,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 
-namespace Darkangel.Dune92
+namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Файл сохраненной игры Dune (1992)</para>

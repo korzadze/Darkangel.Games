@@ -1,4 +1,4 @@
-﻿namespace Darkangel.Dune92
+﻿namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Субрегионы (вторая часть названия поселения)</para>

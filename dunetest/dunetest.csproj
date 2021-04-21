@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Darkangel.Dune92\Darkangel.Dune92.csproj" />
+    <ProjectReference Include="..\Darkangel.Dune92\Darkangel.Games.Dune92.csproj" />
   </ItemGroup>
 
 </Project>

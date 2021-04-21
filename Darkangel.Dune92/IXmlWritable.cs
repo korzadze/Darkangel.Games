@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace Darkangel.Dune92
+namespace Darkangel.Games.Dune92
 {
     /// <summary>
     /// <para>Интерфейс объектов, поддерживающих запись данных в XML</para>
