@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Darkangel.Games.Dune92.SpiceDensity"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Darkangel.Games.Dune92"
+             mc:Ignorable="d" 
+             d:DesignHeight="22" d:DesignWidth="216">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="SpiceDensityResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Image Tag="00" Source="{StaticResource density00}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="01" Source="{StaticResource density01}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="02" Source="{StaticResource density02}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="03" Source="{StaticResource density03}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="04" Source="{StaticResource density04}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="05" Source="{StaticResource density05}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="06" Source="{StaticResource density06}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="07" Source="{StaticResource density07}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="08" Source="{StaticResource density08}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="09" Source="{StaticResource density09}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="10" Source="{StaticResource density10}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="11" Source="{StaticResource density11}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="12" Source="{StaticResource density12}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="13" Source="{StaticResource density13}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="14" Source="{StaticResource density14}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+        <Image Tag="15" Source="{StaticResource density15}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
+    </StackPanel>
+</UserControl>
