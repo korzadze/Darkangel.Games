@@ -4,6 +4,81 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <RootNamespace>Darkangel.Games.Dune92</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>darkangel2021.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\SpiceDensity00.png" />
+    <None Remove="Resources\Images\SpiceDensity01.png" />
+    <None Remove="Resources\Images\SpiceDensity02.png" />
+    <None Remove="Resources\Images\SpiceDensity03.png" />
+    <None Remove="Resources\Images\SpiceDensity04.png" />
+    <None Remove="Resources\Images\SpiceDensity05.png" />
+    <None Remove="Resources\Images\SpiceDensity06.png" />
+    <None Remove="Resources\Images\SpiceDensity07.png" />
+    <None Remove="Resources\Images\SpiceDensity08.png" />
+    <None Remove="Resources\Images\SpiceDensity09.png" />
+    <None Remove="Resources\Images\SpiceDensity10.png" />
+    <None Remove="Resources\Images\SpiceDensity11.png" />
+    <None Remove="Resources\Images\SpiceDensity12.png" />
+    <None Remove="Resources\Images\SpiceDensity13.png" />
+    <None Remove="Resources\Images\SpiceDensity14.png" />
+    <None Remove="Resources\Images\SpiceDensity15.png" />
+    <None Remove="SpiceDensity00.png" />
+    <None Remove="SpiceDensity01.png" />
+    <None Remove="SpiceDensity02.png" />
+    <None Remove="SpiceDensity03.png" />
+    <None Remove="SpiceDensity04.png" />
+    <None Remove="SpiceDensity05.png" />
+    <None Remove="SpiceDensity06.png" />
+    <None Remove="SpiceDensity07.png" />
+    <None Remove="SpiceDensity08.png" />
+    <None Remove="SpiceDensity09.png" />
+    <None Remove="SpiceDensity10.png" />
+    <None Remove="SpiceDensity11.png" />
+    <None Remove="SpiceDensity12.png" />
+    <None Remove="SpiceDensity13.png" />
+    <None Remove="SpiceDensity14.png" />
+    <None Remove="SpiceDensity15.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\SpiceDensity04.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\SpiceDensity00.png" />
+    <Content Include="Resources\Images\SpiceDensity01.png" />
+    <Content Include="Resources\Images\SpiceDensity02.png" />
+    <Content Include="Resources\Images\SpiceDensity03.png" />
+    <EmbeddedResource Include="Resources\Images\SpiceDensity10.png" />
+    <EmbeddedResource Include="Resources\Images\SpiceDensity11.png" />
+    <EmbeddedResource Include="Resources\Images\SpiceDensity12.png" />
+    <EmbeddedResource Include="Resources\Images\SpiceDensity13.png" />
+    <EmbeddedResource Include="Resources\Images\SpiceDensity14.png" />
+    <EmbeddedResource Include="Resources\Images\SpiceDensity15.png" />
+    <Resource Include="Resources\Images\SpiceDensity05.png" />
+    <Resource Include="Resources\Images\SpiceDensity06.png" />
+    <Resource Include="Resources\Images\SpiceDensity07.png" />
+    <Resource Include="Resources\Images\SpiceDensity08.png" />
+    <Resource Include="Resources\Images\SpiceDensity09.png" />
+    <Resource Include="SpiceDensity00.png" />
+    <Resource Include="SpiceDensity01.png" />
+    <Resource Include="SpiceDensity02.png" />
+    <Resource Include="SpiceDensity03.png" />
+    <Resource Include="SpiceDensity04.png" />
+    <Resource Include="SpiceDensity05.png" />
+    <Resource Include="SpiceDensity06.png" />
+    <Resource Include="SpiceDensity07.png" />
+    <Resource Include="SpiceDensity08.png" />
+    <Resource Include="SpiceDensity09.png" />
+    <Resource Include="SpiceDensity10.png" />
+    <Resource Include="SpiceDensity11.png" />
+    <Resource Include="SpiceDensity12.png" />
+    <Resource Include="SpiceDensity13.png" />
+    <Resource Include="SpiceDensity14.png" />
+    <Resource Include="SpiceDensity15.png" />
+  </ItemGroup>
 
 </Project>

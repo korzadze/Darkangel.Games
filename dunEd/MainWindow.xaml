@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lib="clr-namespace:Darkangel.Games.Dune92;assembly=Darkangel.Games.Dune92.SpiceDensityControl"
+        xmlns:res="clr-namespace:dunEd.Properties"
         xmlns:local="clr-namespace:dunEd"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="350" Width="600">
     <Grid>
-
+        <Label Name="LabelPath" Content="{x:Static res:StringResources.PathToGame}" Margin="10,10,0,0" Width="Auto" Height="Auto"/>
+        <TextBlock x:Name="GamePath" Height="Auto" Width="370" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="131,15,0,0"/>
     </Grid>
 </Window>

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Darkangel.Games.Dune92
 {
@@ -20,39 +9,69 @@ namespace Darkangel.Games.Dune92
     /// </summary>
     public partial class SpiceDensity : UserControl
     {
+        const int CellCount = 16;
+        const int OneCellCost = 17;
+        const int MinCellIndex = 0;
+        const int MaxCellIndex = CellCount - 1;
+        const int MaxValue = OneCellCost * MaxCellIndex;
+        const int MinValue = 0;
+
+        private int _Index = 0;
+        private void SetIndex(int value)
+        {
+            value %= CellCount;
+
+            if (_Index != value)
+            {
+                foreach (var el in DensityPanel.Children)
+                {
+                    if (el is Button btn)
+                    {
+                        if (btn.TabIndex == _Index)
+                        {
+                            btn.BorderBrush = Brushes.Transparent;
+                        }
+                        else if (btn.TabIndex == value)
+                        {
+                            btn.BorderBrush = Brushes.Black;
+                        }
+                    }
+                }
+            }
+            _Index = value;
+        }
+        public int Value
+        {
+            get => _Index * OneCellCost;
+            set
+            {
+                if (value > MaxValue)
+                {
+                    _Index = MaxCellIndex;
+                }
+                else if (value < MinValue)
+                {
+                    _Index = MinCellIndex;
+                }
+                else
+                {
+                    var num = value / OneCellCost;
+                    if (((value % OneCellCost) / 2) > 8) num++;
+                    SetIndex(num);
+                }
+            }
+        }
         public SpiceDensity()
         {
             InitializeComponent();
         }
 
-        private void Density00_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Density_Click(object sender, RoutedEventArgs e)
         {
-            
-        }
-
-        private void Density01_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Density02_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Density03_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Density04_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void Density05_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
+            if(sender is Button bt)
+            {
+                SetIndex(bt.TabIndex);
+            }
         }
     }
 }

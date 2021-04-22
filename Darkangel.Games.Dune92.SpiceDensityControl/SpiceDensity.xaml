@@ -5,30 +5,55 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Darkangel.Games.Dune92"
              mc:Ignorable="d" 
-             d:DesignHeight="22" d:DesignWidth="216">
-    <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="SpiceDensityResources.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Image Tag="00" Source="{StaticResource density00}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="01" Source="{StaticResource density01}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="02" Source="{StaticResource density02}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="03" Source="{StaticResource density03}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="04" Source="{StaticResource density04}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="05" Source="{StaticResource density05}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="06" Source="{StaticResource density06}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="07" Source="{StaticResource density07}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="08" Source="{StaticResource density08}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="09" Source="{StaticResource density09}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="10" Source="{StaticResource density10}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="11" Source="{StaticResource density11}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="12" Source="{StaticResource density12}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="13" Source="{StaticResource density13}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="14" Source="{StaticResource density14}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-        <Image Tag="15" Source="{StaticResource density15}" Width="9" Height="16" Margin="2,2" Stretch="Fill" StretchDirection="Both"/>
-    </StackPanel>
+             d:DesignHeight="29" d:DesignWidth="232" Width="232" Height="29" MinWidth="232" MinHeight="29" ScrollViewer.VerticalScrollBarVisibility="Disabled" MaxWidth="232" MaxHeight="29">
+    <StackPanel Name="DensityPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="224">
+        <Button TabIndex="0" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="Black">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity00.png"/>
+        </Button>
+        <Button TabIndex="1" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity01.png"/>
+        </Button>
+        <Button TabIndex="2" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity02.png"/>
+        </Button>
+        <Button TabIndex="3" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity03.png"/>
+        </Button>
+        <Button TabIndex="4" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity04.png"/>
+        </Button>
+        <Button TabIndex="5" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity05.png"/>
+        </Button>
+        <Button TabIndex="6" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity06.png"/>
+        </Button>
+        <Button TabIndex="7" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity07.png"/>
+        </Button>
+        <Button TabIndex="8" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity08.png"/>
+        </Button>
+        <Button TabIndex="9" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity09.png"/>
+        </Button>
+        <Button TabIndex="10" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity10.png"/>
+        </Button>
+        <Button TabIndex="11" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity11.png"/>
+        </Button>
+        <Button TabIndex="12" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity12.png"/>
+        </Button>
+        <Button TabIndex="13" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity13.png"/>
+        </Button>
+        <Button TabIndex="14" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity14.png"/>
+        </Button>
+        <Button TabIndex="15" Width="14" Height="22" Background="#00000000" BorderThickness="0,3,0,0" Click="Density_Click" BorderBrush="#00000000">
+            <Image Source="/Darkangel.Games.Dune92.SpiceDensityControl;component/SpiceDensity15.png"/>
+        </Button>
+      </StackPanel>
 </UserControl>
